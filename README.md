@@ -1,90 +1,92 @@
 # Kurot Editor
 
-**面向 Kurot 项目的桌面 UI 编辑器。**
+**English** | [简体中文](README.zh-CN.md)
 
-直接打开项目中的 `.kui.xml`，在画布上调整组件、布局、文字和资源，通过 Kurot 原生渲染预览效果，再把修改保存回项目文件。
+**A desktop UI editor for Kurot projects.**
 
-[下载与版本记录](https://github.com/kurot-engine/kurot-editor-release/releases) · [反馈问题](https://github.com/kurot-engine/kurot-editor-release/issues)
+Open your project's `.kui.xml` files, arrange components on the canvas, edit layouts, text and resources, preview with Kurot's native renderer, and save your changes back to the project.
 
-![Kurot Editor 深色设计工作台：项目文件、界面画布、图层与属性面板](assets/screenshots/workbench-dark.png)
+[Downloads & releases](https://github.com/kurot-engine/kurot-editor-release/releases) · [Report an issue](https://github.com/kurot-engine/kurot-editor-release/issues)
 
-## 下载与安装
+![Kurot Editor's dark design workspace with project files, canvas, layers and properties](assets/screenshots/en/workbench-dark.png)
 
-目前提供 **macOS Apple Silicon（M 系列芯片）** 版本。安装后的应用可直接运行，无需另外安装 Node.js 或 Bun。
+## Download and install
 
-1. 在 [Releases](https://github.com/kurot-engine/kurot-editor-release/releases) 中选择版本，下载 `Kurot-Editor-<版本>-mac-arm64.dmg`。
-2. 打开 DMG，将 **Kurot Editor** 拖入 **Applications**，然后启动应用。也可以下载 ZIP，解压后放入 Applications。
-3. 使用“文件 → 打开项目文件夹…”选择 Kurot 项目根目录。
-4. 打开皮肤文件，编辑后按 `Cmd+S` 保存。
+Currently available for **macOS on Apple Silicon (M-series chips)**. The installed app runs without a separate Node.js or Bun installation.
 
-正式版本提供“检查更新…”入口，可查看更新说明、手动下载，并在处理未保存内容后重启安装。每个版本的具体变更见对应 Release 说明。
+1. Choose a version from [Releases](https://github.com/kurot-engine/kurot-editor-release/releases) and download `Kurot-Editor-<version>-mac-arm64.dmg`.
+2. Open the DMG, drag **Kurot Editor** into **Applications**, and launch it. You can also download the ZIP, extract the app and move it into Applications.
+3. Choose **File → Open project folder…** and select your Kurot project's root directory.
+4. Open a skin file, make your changes, and press `Cmd+S` to save.
 
-## 可以做什么
+Release builds include **Check for Updates…** to view release notes, download an update and restart to install it after handling unsaved changes. See each release's notes for its changes.
 
-- **设计与预览**：选择、移动、缩放、框选、分组和调整图层；通过原生预览检查布局、资源及嵌套组件。
-- **文字编辑**：配置字体、字号、颜色、描边和对齐，支持 Label、BitmapLabel 及 RichLabel 富文本。
-- **图层管理**：隐藏和锁定组件及其子元素。隐藏对象在图层面板中变灰；这些设置只影响编辑器设计视图，保存在项目中，不改变组件的 `visible` 或皮肤 XML。
-- **资源管理**：查看图片、图集和子纹理，登记资源、维护资源组、刷新图集，以及编辑九宫格。
-- **统一样式**：查看项目字体配置，管理颜色和 Label 文字预设，查询样式引用。
-- **多语言内容**：管理项目语种、默认语言及翻译键值。
-- **组件复用**：创建自定义组件、打开组件皮肤，或从 Group 提取组件。
-- **文件工作流**：多标签编辑、撤销与重做、手动保存，以及外部文件变化与保存冲突提示。
+## Features
 
-## 界面一览
+- **Design and preview:** Select, move, resize, marquee-select, group and reorder components. Check layouts, resources and nested components with the native preview.
+- **Text editing:** Adjust fonts, sizes, colors, outlines and alignment. Supports Label, BitmapLabel and RichLabel rich text.
+- **Layer controls:** Hide or lock components and their children. Hidden layers appear gray in the Layers panel. These settings affect only the editor's design view and are stored with the project, leaving component `visible` properties and skin XML unchanged.
+- **Resource management:** Browse images, atlases and frames; register resources, manage resource groups, refresh atlases and edit nine-slice grids.
+- **Shared styles:** Inspect project font settings, manage colors and Label presets, and find style references.
+- **Localization:** Manage project languages, the default language, translation keys and their values.
+- **Reusable components:** Create custom components, open their skins or extract a component from a Group.
+- **File workflow:** Work across tabs with undo, redo and explicit saves, plus notifications for external file changes and save conflicts.
 
-以下截图使用示例项目，拍摄于 Kurot Editor 0.27.1。点击图片可查看大图。
+## Screenshots
 
-### 设计工作台与浅色主题
+Captured in Kurot Editor 0.27.1 using a sample project. Click an image to view it at full size.
 
-项目文件、画布、图层和属性面板集中在同一工作台。画布支持标尺、缩放、平移和组件边界；编辑器提供深色、浅色及跟随系统的外观，界面可切换中文或英文。
+### Design workspace and light theme
 
-![浅色设计工作台，选中文字后编辑字体、布局与位置](assets/screenshots/workbench-light.png)
+Project files, the canvas, layers and properties share one workspace. The canvas provides rulers, zoom, pan and component outlines. Choose a dark, light or system theme, with an English or Chinese interface.
 
-### 富文本编辑
+![Light design workspace with a selected label and its text, layout and position properties](assets/screenshots/en/workbench-light.png)
 
-直接输入正文，选中文字设置字号、粗体、斜体、颜色和描边。编辑区下方可展开原生排版预览，也可以随时更改编辑与预览的背景颜色，方便查看浅色或深色文字。
+### Rich text editing
 
-![富文本编辑器，两行格式工具栏与原生排版预览](assets/screenshots/rich-text.png)
+Type directly into the editor and select text to change its size, emphasis, color or outline. Expand the native layout preview below the editing area. Change the editing and preview background to make light or dark text easier to see.
 
-### 图片、图集与资源组
+![Rich text editor with two rows of formatting controls and a native layout preview](assets/screenshots/en/rich-text.png)
 
-资源管理器在独立窗口中打开。浏览图集和子纹理，查看资源路径与预览，管理加载用的资源组。
+### Images, atlases and resource groups
 
-![资源管理器，图集预览与资源组成员](assets/screenshots/resources.png)
+The resource manager opens in its own window. Browse atlases and frames, inspect resource paths and previews, and organize loading groups.
 
-### 九宫格编辑
+![Resource manager showing an atlas preview and resource group members](assets/screenshots/en/resources.png)
 
-在棋盘格背景上拖动分割线，调整九宫格区域。参考线贯穿视口，缩放和平移便于精确定位；资源默认值与组件局部覆盖分别编辑。
+### Nine-slice editing
 
-![九宫格编辑器，铺满的棋盘格背景与延展参考线](assets/screenshots/nine-slice.png)
+Drag the guides over a checkerboard background to define the stretchable region. Guides span the viewport, while zoom and pan help with precise placement. Edit resource defaults and component overrides separately.
 
-### 文字样式
+![Nine-slice editor with a full checkerboard background and guides extending across the viewport](assets/screenshots/en/nine-slice.png)
 
-集中管理标题、正文、按钮等 Label 文字预设。字体、字号、颜色、粗斜体及描边可以统一配置，再在组件上引用。
+### Text styles
 
-![样式管理器中的 Label 文字预设](assets/screenshots/text-styles.png)
+Manage Label presets for headings, body text, buttons and other roles. Define fonts, sizes, colors, emphasis and outlines centrally, then reference them from components.
 
-### 颜色预设
+![Style manager showing shared Label text presets](assets/screenshots/en/text-styles.png)
 
-将项目配色集中维护为命名预设，供皮肤引用；引用查询帮助定位使用位置。
+### Color presets
 
-![样式管理器中的项目颜色预设与色块](assets/screenshots/color-presets.png)
+Maintain the project's palette as named presets for skins to reference. Reference lookup helps locate where a preset is used.
 
-### 语言与翻译
+![Style manager showing named color presets and swatches](assets/screenshots/en/color-presets.png)
 
-在独立语言窗口中切换语种、设置默认语言并编辑翻译内容。新增语种可从内置语言目录中搜索选择。
+### Languages and translations
 
-![语言管理器，中文、英文、日文与翻译键值](assets/screenshots/localization.png)
+Switch languages, choose the default and edit translations in a separate window. Search the built-in language catalog when adding a language.
 
-### XML 源码视图
+![Language manager with Chinese, English and Japanese languages and translation entries](assets/screenshots/en/localization.png)
 
-设计结果保存为项目的 KUI XML。源码视图提供语法高亮、组件选中联动、搜索与显式格式化，方便核对界面结构。源码视图只读；界面修改通过设计视图完成。
+### XML source view
 
-![KUI XML 源码视图与组件属性面板](assets/screenshots/source-view.png)
+Design changes are saved as KUI XML in your project. The source view offers syntax highlighting, linked component selection, search and an explicit formatting command. The source view is read-only; edit the interface in Design mode.
 
-## 打开你的项目
+![KUI XML source view alongside component properties](assets/screenshots/en/source-view.png)
 
-选择包含 `kurot.config.ts` 的项目根目录。常见结构如下：
+## Open your project
+
+Select the project root containing `kurot.config.ts`. A typical layout is:
 
 ```text
 MyGame/
@@ -100,25 +102,25 @@ MyGame/
         └── components/
 ```
 
-皮肤目录由 `ui.sourceDir` 指定，通常为 `resource/ui`。`style.json` 和 `locale.json` 是可选配置，分别用于项目字体／样式及多语言内容。
+The skin directory is configured through `ui.sourceDir`, usually `resource/ui`. Optional `style.json` and `locale.json` files provide project fonts/styles and localization settings.
 
-编辑器直接读取和保存项目文件。皮肤采用手动保存；关闭文件、切换项目或退出时，会提示处理未保存内容。项目编译仍沿用项目自己的 Kurot CLI 流程。
+The editor reads and saves project files directly. Skins use explicit saves; closing a file, switching projects or quitting prompts you to handle unsaved changes. Compile the project with its existing Kurot CLI workflow.
 
-## 常用快捷键
+## Keyboard shortcuts
 
-| 操作             | macOS 快捷键              |
-| ---------------- | ------------------------- |
-| 打开项目         | `Cmd+Shift+O`             |
-| 新建 KUI 文件    | `Cmd+N`                   |
-| 保存／保存全部   | `Cmd+S`／`Cmd+Option+S`   |
-| 另存为           | `Cmd+Shift+S`             |
-| 设计／预览／源码 | `Cmd+1`／`Cmd+2`／`Cmd+3` |
-| 复制／剪切／粘贴 | `Cmd+C`／`Cmd+X`／`Cmd+V` |
-| 撤销／重做       | `Cmd+Z`／`Cmd+Shift+Z`    |
-| 设置             | `Cmd+,`                   |
+| Action                    | macOS shortcut              |
+| ------------------------- | --------------------------- |
+| Open project              | `Cmd+Shift+O`               |
+| New KUI file              | `Cmd+N`                     |
+| Save / save all           | `Cmd+S` / `Cmd+Option+S`    |
+| Save as                   | `Cmd+Shift+S`               |
+| Design / preview / source | `Cmd+1` / `Cmd+2` / `Cmd+3` |
+| Copy / cut / paste        | `Cmd+C` / `Cmd+X` / `Cmd+V` |
+| Undo / redo               | `Cmd+Z` / `Cmd+Shift+Z`     |
+| Settings                  | `Cmd+,`                     |
 
-## 反馈
+## Feedback
 
-遇到问题或有功能建议，请提交 [Issue](https://github.com/kurot-engine/kurot-editor-release/issues)。描述中附上 Editor 版本、macOS 版本、复现步骤和相关截图；能提供最小示例皮肤时，也请一并附上。
+For bugs and feature requests, [open an issue](https://github.com/kurot-engine/kurot-editor-release/issues). Include your Editor and macOS versions, steps to reproduce and relevant screenshots. A minimal sample skin is helpful when available.
 
-本仓库用于发布 Kurot Editor 安装包、版本说明和使用介绍。
+This repository hosts Kurot Editor installers, release notes and the product introduction.
